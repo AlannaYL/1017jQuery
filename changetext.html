@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #list {
+            text-align: center;
+            font-size: 0;
+        }
+
+        #list li {
+            padding: 0 3px;
+            display: inline-block;
+        }
+
+        #text {
+            list-style: none;
+
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <input type="button" value="健康新知" class="btn">
+
+    <input type="button" value="菸害防制" class="btn">
+
+    <input type="button" value="癌症防治" class="btn">
+
+    <input type="button" value="慢性病防治" class="btn">
+
+    <div class="content">123</div>
+    <div class="content">456</div>
+    <div class="content">789</div>
+    <div class="content">011</div>
+    <script src="./jquery-3.6.1.min.js"></script>
+    <script>
+        // $('.content').hide()
+        // $('.content').eq(0).show
+
+        $('.btn').on('click', function (e) {
+            $('.content').hide()
+            $('.content').eq($('.btn').index(this)).show()
+        })
+
+        $('.content').eq(0).click()
+    </script>
+</body>
+
+</html>

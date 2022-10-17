@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #headermaster {
+            width: 300px;
+            margin: auto;
+        }
+
+        input {
+            margin-bottom: 10px;
+        }
+
+        img {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="headermaster">
+        <input type="button" value="點我看帥哥" id="btn">
+        <img src="./0104.jpg" id="img">
+    </div>
+    <script src="./jquery-3.6.1.min.js"></script>
+    <script>
+        // let change = false
+        // $('#headermaster').on('click', 'input', function (e) {
+        //     const pic = $('#headermaster').children('img')
+        //     if (change) {
+        //         console.log('1', change)
+        //         pic.attr('src', './轟.jpg')
+        //     } else {
+        //         console.log('2', change)
+        //         pic.attr('src', './0104.jpg')
+        //     }
+        //     change = !change
+        // })
+
+        // 老師解題
+        $('#btn').click(function () {
+            const img = $('#img')
+            if (img.attr('src').includes('0104')) {
+                img.attr('src', '轟.jpg')
+            } else {
+                img.attr('src', './0104.jpg')
+            }
+        })
+    </script>
+</body>
+
+</html>
