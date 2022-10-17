@@ -41,15 +41,15 @@
     <div class="content">011</div>
     <script src="./jquery-3.6.1.min.js"></script>
     <script>
-        // $('.content').hide()
-        // $('.content').eq(0).show
+        $('.content').hide()
+        $('.content').eq(0).show()
 
         $('.btn').on('click', function (e) {
             $('.content').hide()
             $('.content').eq($('.btn').index(this)).show()
         })
 
-        $('.content').eq(0).click()
+        // $('.content').eq(0).click()
     </script>
 </body>
 
