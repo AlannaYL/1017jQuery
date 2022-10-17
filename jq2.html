@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .bg-skyblue {
+            background-color: skyblue;
+        }
+
+        .text-coral {
+            color: MediumPurple;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="list">
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
+    </div>
+
+    <hr>
+
+    <div id="list2">
+        <ul>
+            <li>a</li>
+            <li>b</li>
+            <li>c</li>
+        </ul>
+        <p>Q</p>
+    </div>
+    <hr>
+    <div id="list3">
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li id="list3-li3">3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+    </div>
+    <hr>
+    <p class="text"></p>
+    <p class="text"></p>
+    <p class="text"></p>
+    <script src="./jquery-3.6.1.min.js"></script>
+    <script>
+        // .fing(選擇器) 在指定的東西裡找指定的東西，找裡面多層
+        $('#list').find('li').eq(1).css('color', 'pink')
+        // .children(選擇器) 在指定的東西裡找指定的東西，找下一層，不指定找全部
+        $('#list2').children('li').eq(1).css('color', 'pink')
+        $('#list2').children('p').css('color', 'pink')
+        $('#list2').children().css('background', 'PapayaWhip')
+
+        //  .each(function(索引){
+        // $(this) 代表迴圈跑到的元素
+        // })
+        $('ul').each(function (i) {
+            console.log($(this), i)
+            // each的this代表回到這個東西
+            $(this).children().eq(1).css('font-size', '48px')
+        })
+
+        $('.text').each(function (i) {
+            $(this).text(i)
+            // $(this).eq(1).text('我想中樂透')
+        })
+
+        const list3Li3 = $('#list3-li3')
+        // .prev() 同一層的前一個
+        // .prevAll() 同一層的前面所有．() 可以放選擇器過濾
+        // .next() 同一層的後一個
+        // .nextAll 同一層的後面所有．() 可以放選擇器過濾
+        // siblings()同一層其他所有．() 可以放選擇器過濾
+
+        list3Li3.prev().css('color', 'Peru')
+        list3Li3.prevAll().addClass('bg-skyblue')
+        list3Li3.next().css('background', 'plum')
+        list3Li3.nextAll().addClass('text-coral')
+        list3Li3.siblings().css('font-weight', 'bolder')
+
+        // .parent() 上層
+        // .parents()上層所有
+        // .closest(選擇器) 上符合選擇器的第一個
+
+        list3Li3.parent().css('background', 'MistyRose ')
+        list3Li3.parents().css('font-size', '48px')
+        list3Li3.closest('div').css('text-align', 'center')
+    </script>
+</body>
+
+</html>
